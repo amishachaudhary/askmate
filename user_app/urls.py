@@ -17,5 +17,5 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-    path('qna/',include('qna_app.urls')),
+    # path('qna/',include('qna_app.urls')),
 ]
