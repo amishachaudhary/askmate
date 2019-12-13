@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from .views import userauth,logoutauth
+
+app_name = 'user'
 
 urlpatterns = [
     # path('qna/',include('qna_app.urls')),
+    path('login/', userauth,name='login'),
+    path('logout/', logoutauth,name='logout')
 ]

@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import addquestion,questions,update_question,delete
-from . views import QuestionModelCreateView,QuestionModelListView,question_detail
+from .views import QuestionModelCreateView,QuestionModelListView,question_detail
 
 app_name='qna'
 
@@ -28,6 +28,8 @@ urlpatterns = [
     path('create/',QuestionModelCreateView.as_view(),name="create"),
     path('list/',QuestionModelListView.as_view(),name="list"),
     path('detail/<int:id>',question_detail,name="detail")
+
+    # path('test/',test,name='test')
 
     
     

@@ -60,9 +60,11 @@ def delete(request,id):
     return redirect('qna:read')
 
 def questions(request):
-    quest = QuestionModel.objects.all()
-    return render(request,'questionmodel_list.html',{'questions':quest})
-
+    if('id' in request.session):
+        quest = QuestionModel.objects.all()
+        return render(request,'questionmodel_list.html',{'questions':quest})
+    else:
+        return redirect('user:login')
 
 def question_detail(request,id):
     question= QuestionModel.objects.get(id=id)

@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <!-- this is question details of question id {{id}} fro inside the temp -->
-
-    this is the question:
-    {{question.title}}
-    <br>
-    <br>
-    {% for answers in answer %}
-
-    <h1>  {{answers.answer_desc}} </h1>
-    
-    {% endfor %}
-
-</body>
-</html>
+{% extends 'base.html'%}
+{% block title%}
+   {{question.title}}
+{% endblock %}
+{%block main_body%}
+{%for answer in answer%}
+<div class="card">
+    <div class="card-body">
+        <h5>{{question.title}}</h5>
+        Votes:{{qn.votes}}
+        Asked by:amisha
+    </div>
+</div>
+{% endfor %}
+{%endblock%}
