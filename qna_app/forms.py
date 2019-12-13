@@ -1,8 +1,8 @@
 from django import forms
-from .models import QuestionModel, AnswerModel
+from .models import QuestionModel, AnswerModel,CategoryModel
 
 class QuestionForm(forms.ModelForm):
     class Meta:
-        model = QuestionForm
+        model = QuestionModel
         fields = '__all__'
         
